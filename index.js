@@ -13,7 +13,7 @@
 // Subjects:
 // • Change Listeners using jQuery
 $(document).ready(
-  function(){
+  function() {
   $("#inputValue1").keyup(function(){
     $("#ex1").text($(this).val());
   });
@@ -32,4 +32,14 @@ $(document).ready(
 // • Use jQuery’s methods to show and hide the elements.
 // Subjects:
 // • Showing and hiding elements using jQuery
+$(document).ready(
+  function () {
+    $("#btnHideEx2").click(function() {
+      $("#ex2").hide(1000);
+    });
+    $("#btnShowEx2").click(function(){
+      $("#ex2").show(1000);
+    })
+  }
+);
 
