@@ -21,13 +21,13 @@ $(document).ready(
 );
 
 // Exercise 2 – Show / Hide
-// Create a jQuery script that hides an element (text element or an image, for instance) when it is clicked, 
-// and reveals it again when another element is clicked.
+// Create a jQuery script that hides an element (text element or an image, for
+// instance) when it is clicked, and reveals it again when another element is clicked.
 // Required Features:
 // • An element that hides itself when clicked.
 // • An element that can be clicked to bring the other element back.
-// • A button that can be clicked to toggle the visibility of an element (click once to hide, and again to 
-// hide, and so on).
+// • A button that can be clicked to toggle the visibility of an element (click
+// once to hide, and again to  hide, and so on).
 // Code Requirements:
 // • Use jQuery’s methods to show and hide the elements.
 // Subjects:
@@ -44,8 +44,8 @@ $(document).ready(
 );
 
 // Exercise 3 – Show / Hide
-// Create a jQuery script that changes the styling rules for an element when a button is pressed. At least 
-// three different buttons should be used.
+// Create a jQuery script that changes the styling rules for an element
+// when a button is pressed. At least three different buttons should be used.
 // Required Features:
 // • An element whose CSS rules can be manipulated (a text element etc.).
 // • At least three elements or buttons that changes the styling of the first element.
@@ -90,6 +90,29 @@ function rotateText(){
   else{    
     $("#ex3").css({"transform": "rotateX(0deg)", transition: "5s"});
     (document.getElementById("btnTurnEx3").innerHTML === "Turn paragragh")
-  }
-  
+  }  
+}
+
+// Exercise 4 – Key Press Listener
+// Create a jQuery script that listens for a key press on the keyboard, and prints
+// to an element on the page, which key(s) is being held down, or was pressed. 
+// Required Features:
+// • An element that displays which keys are being pressed, and which one was last pressed 
+// when none are held down.
+// • The normal functionality of the key should be suppressed – if you press the down key, for 
+// instance, the page should not scroll down, even if able to do so. 
+// Code Requirements:
+// • Use jQuery to create the event listener and handle the output.
+// Subjects:
+// • Key Listeners through jQuery
+$(document).ready(function(){
+
+  $(window).on("keydown", function(e) {
+    writePressedKey(e);
+  });
+  })
+
+function writePressedKey(e){
+  e.preventDefault();
+  $("#ex4").html("You press key : " + e.keyCode);
 }
