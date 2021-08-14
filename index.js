@@ -43,3 +43,53 @@ $(document).ready(
   }
 );
 
+// Exercise 3 – Show / Hide
+// Create a jQuery script that changes the styling rules for an element when a button is pressed. At least 
+// three different buttons should be used.
+// Required Features:
+// • An element whose CSS rules can be manipulated (a text element etc.).
+// • At least three elements or buttons that changes the styling of the first element.
+// o One that can add styles to the element.
+// o One that can remove styles that already exist on the element.
+// o One that can toggle style rules for the element.
+// Code Requirements:
+// • Use jQuery’s methods to change the styling rules.
+// Subjects:
+// • Changing CSS styling rules through jQuery.
+
+$(document).ready(function(){
+  $("#btnRedEx3").click(function()
+  {
+    changeColor();
+  });
+  $("#btnTurnEx3").click(function(){
+    rotateText();
+  });
+  $("#btnRemoveEx3").click(function(){
+    $("#ex3").removeAttr("style");
+  });
+});
+
+function changeColor(){
+
+  if (document.getElementById("btnRedEx3").innerHTML === "Change to red") {
+    $("#ex3").css({"color":"red", "font-size":"30px"});
+    document.getElementById("btnRedEx3").innerHTML = "Change to Blue";
+  }
+  else{
+    document.getElementById("btnRedEx3").innerHTML ="Change to red";
+    $("#ex3").css({"color":"blue", "font-size":"30px"});
+  }
+}
+
+function rotateText(){
+  if (document.getElementById("btnTurnEx3").innerHTML === "Turn paragragh"){
+    $("#ex3").css({"transform": "rotateX(180deg)", transition: "2s"})
+    document.getElementById("btnTurnEx3").innerHTML = "Return back";
+  }  
+  else{    
+    $("#ex3").css({"transform": "rotateX(0deg)", transition: "5s"});
+    (document.getElementById("btnTurnEx3").innerHTML === "Turn paragragh")
+  }
+  
+}
