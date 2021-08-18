@@ -12,13 +12,12 @@
 // • The code must use jQuery’s selectors rather than the normal JavaScript ones.
 // Subjects:
 // • Change Listeners using jQuery
-$(document).ready(
-  function() {
+$(document).ready(function(){
   $("#inputValue1").keyup(function(){
-    $("#ex1").text($(this).val());
+  $("#ex1").html($("#inputValue1").val());
   });
-  }
-);
+   
+});
 
 // Exercise 2 – Show / Hide
 // Create a jQuery script that hides an element (text element or an image, for
@@ -113,6 +112,28 @@ $(document).ready(function(){
   })
 
 function writePressedKey(e){
-  e.preventDefault();
-  $("#ex4").html("You press key : " + e.keyCode);
+  // console.log(e.originalEvent.code)
+  if(["ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].includes(e.originalEvent.code))
+  {
+    e.preventDefault();
+  }
+  $("#ex4").html("You press key : " + e.key);
 }
+
+// Exercise 5 – Focus Events
+// Create a jQuery script that triggers an event when an element (or an element within
+// it) loses or gains focus, changing the style rules of the element when it does.
+// Required Features:
+// • An element to use the script on, containing at least two different levels of 
+// elements inside it.
+// Code Requirements:
+// • Use jQuery to create the event listener and handle the style changes.
+// Subjects:
+// • Focus Listeners with jQuery
+$(document).ready(function(){
+  $("#selectItems").change(function(){
+    var selectedItem = $("#selectItems option:selected");
+    $("#ex5").html("You select : " + selectedItem.text())
+    
+  })
+})

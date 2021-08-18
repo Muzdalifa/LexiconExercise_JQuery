@@ -7,7 +7,7 @@
   --color2:#002e4d;
   --color3: #001f33;
 }
-body{
+body,select{
 font-size: 17px;
 font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 font-size: 1.2em;
@@ -71,6 +71,13 @@ width: 80%;
 #ex3{
   transition: width 5s, height 4s;
 }
+select{
+  font-size: 17px;
+  background: var(--color-3);
+  padding: 4px 10px;
+  margin-left: 12px;
+}
+
 footer{
   width:100%;
   background: var(--color3);
