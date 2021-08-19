@@ -130,10 +130,21 @@ function writePressedKey(e){
 // • Use jQuery to create the event listener and handle the style changes.
 // Subjects:
 // • Focus Listeners with jQuery
+// $(document).ready(function(){
+//   $("#inputValue5").focus(function(){
+//     $("#inputValue5").css({"border":"#001f33 solid 10px"});    
+//   });
+//   $("#inputValue5").blur(function(){
+//     $("#inputValue5").css({"border":"#001f33 solid 2px;"})  
+//   });  
+// })
+
 $(document).ready(function(){
-  $("#selectItems").change(function(){
-    var selectedItem = $("#selectItems option:selected");
-    $("#ex5").html("You select : " + selectedItem.text())
-    
-  })
-})
+  $("#inputValue5").focus(function(){
+    $("#inputValue5").css("border","#001f33 solid 10px");
+  });
+    $("#inputValue5").blur(function(){
+    $("#inputValue5").css("border","none");
+    $("#inputValue5").css("border","#001f33 solid 2px");
+  });
+});
